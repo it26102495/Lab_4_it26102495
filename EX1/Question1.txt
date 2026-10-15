@@ -1,0 +1,31 @@
+Question 1 : a=6,b=9,c=14 and flag = 1
+1. c == a + b || !flag
+   14 == 6 + 9 || !1
+   14 == 6 + 9 || 0          not a short circuit
+   14 == 15||0
+   14 == 15
+   false
+
+2. a != 7 && flag || c >= 6
+   6 != 7 && 1 || 14 >= 6    from this  c >= 6 short circuit
+   6 != 7 && 1 || 14 >= 6     
+   6 != 7 &&  1  || false
+   6 != 7 &&  true
+   6 != 7
+    true
+
+3. !(b <= 12) && a % 2 == 0
+   !(9 <= 12) && 6 % 2 == 0      from this !(b <= 12) short circuit
+   !(true) && 6 % 2 == 0      
+   false && true
+   false
+   
+   
+4. !(a > 5 || c < a + b)
+   !(6 > 5 || 14 < 6 + 9)         from this c < a + b short circuit
+   !(true || 14 < 15)       
+   !(true || true)
+   !(true)
+   false
+  
+   
